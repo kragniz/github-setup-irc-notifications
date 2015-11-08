@@ -4,6 +4,7 @@ with irc notifications
 """
 
 import argparse
+import getpass
 
 import github3
 
@@ -13,3 +14,11 @@ def main():
     parser.add_argument('--username'),
     parser.add_argument('--password'),
     args = parser.parse_args()
+
+    if args.password is None:
+        password = getpass.getpass(
+            'Password for github user "{}":'.format(args.username))
+    else:
+        password = args.password
+
+    github = github3.login(args.username, password=password)
