@@ -5,14 +5,16 @@ with irc notifications
 
 import argparse
 import getpass
+import sys
 
 import github3
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--username'),
-    parser.add_argument('--password'),
+    parser.add_argument('--username')
+    parser.add_argument('--password')
+    parser.add_argument('--org')
     args = parser.parse_args()
 
     if args.password is None:
@@ -25,3 +27,10 @@ def main():
 
     if github is None:
         print('Failed to sign into github')
+        sys.exit(1)
+
+    org = github.organization(args.org)
+
+    if org is None:
+        print('Organization "{}" does not appear to exist'.format(args.org))
+        sys.exit(1)
