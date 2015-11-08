@@ -14,8 +14,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--username')
     parser.add_argument('--password')
-    parser.add_argument('--org')
-    parser.add_argument('--channel')
+    parser.add_argument('organization')
+    parser.add_argument('channel')
     args = parser.parse_args()
 
     if args.password is None:
@@ -30,7 +30,7 @@ def main():
         print('Failed to sign into github')
         sys.exit(1)
 
-    org = github.organization(args.org)
+    org = github.organization(args.organization)
 
     if org is None:
         print('Organization "{}" does not appear to exist'.format(args.org))
