@@ -10,6 +10,10 @@ import sys
 import github3
 
 
+def error(message):
+    print(message)
+    sys.exit(1)
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--username')
@@ -27,14 +31,12 @@ def main():
     github = github3.login(args.username, password=password)
 
     if github is None:
-        print('Failed to sign into github')
-        sys.exit(1)
+        error('Failed to sign into github')
 
     org = github.organization(args.organization)
 
     if org is None:
-        print('Organization "{}" does not appear to exist'.format(args.org))
-        sys.exit(1)
+        error('Organization "{}" does not appear to exist'.format(args.org))
 
     conf = {'nickserv_password': '',
             'no_colors': '0',
