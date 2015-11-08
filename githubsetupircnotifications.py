@@ -51,5 +51,13 @@ def main():
             'nick': 'github'
     }
 
+    events = [
+        'push',
+        'delete',
+        'create',
+        'issues',
+        'pull_request'
+    ]
+
     for r in org.iter_repos():
-        r.create_hook('irc', conf)
+        r.create_hook('irc', conf, events=events)
