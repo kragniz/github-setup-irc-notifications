@@ -15,6 +15,7 @@ def main():
     parser.add_argument('--username')
     parser.add_argument('--password')
     parser.add_argument('--org')
+    parser.add_argument('--channel')
     args = parser.parse_args()
 
     if args.password is None:
@@ -34,3 +35,21 @@ def main():
     if org is None:
         print('Organization "{}" does not appear to exist'.format(args.org))
         sys.exit(1)
+
+    conf = {'nickserv_password': '',
+            'no_colors': '0',
+            'password': '',
+            'branch_regexes': '',
+            'room': args.channel,
+            'ssl': '0',
+            'port': '',
+            'branches': '',
+            'server': 'chat.freenode.net',
+            'long_url': '0',
+            'notice': '0',
+            'message_without_join': '1',
+            'nick': 'github'
+    }
+
+    for r in org.iter_repos():
+        r.create_hook('irc', conf)
