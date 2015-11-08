@@ -22,3 +22,6 @@ def main():
         password = args.password
 
     github = github3.login(args.username, password=password)
+
+    if github is None:
+        print('Failed to sign into github')
