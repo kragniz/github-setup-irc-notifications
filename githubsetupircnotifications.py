@@ -16,10 +16,12 @@ def error(message):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--username')
-    parser.add_argument('--password')
-    parser.add_argument('organization')
-    parser.add_argument('channel')
+    parser.add_argument('--username', help='github username')
+    parser.add_argument('--password', help='password for github user')
+    parser.add_argument('organization', help='organization containing the '
+                                             'repositories to add '
+                                             'notifications to')
+    parser.add_argument('channel', help='irc channel to send notifications to')
     args = parser.parse_args()
 
     if args.password is None:
