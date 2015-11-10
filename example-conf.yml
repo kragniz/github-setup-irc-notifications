@@ -1,0 +1,19 @@
+username: your-username
+password: Null
+
+organization: foo
+
+channel-conf:
+    nickserv_password: ''
+    no_colors: '0'
+    password: ''
+    branch_regexes: ''
+    room: '#foo-dev'
+    ssl: '0'
+    port: ''
+    branches: ''
+    server: 'chat.freenode.net'
+    long_url: '0'
+    notice: '0'
+    message_without_join: '1'
+    nick: github
