@@ -24,13 +24,18 @@ def main():
     parser.add_argument('channel', help='irc channel to send notifications to')
     args = parser.parse_args()
 
+    if args.username is None:
+        username = input('github username: ')
+    else:
+        username = args.username
+
     if args.password is None:
         password = getpass.getpass(
-            'Password for github user "{}":'.format(args.username))
+            'Password for github user "{}":'.format(username))
     else:
         password = args.password
 
-    github = github3.login(args.username, password=password)
+    github = github3.login(username, password=password)
 
     if github is None:
         error('Failed to sign into github')
