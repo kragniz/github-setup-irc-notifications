@@ -17,7 +17,8 @@ setuptools.setup(
     ,},
 
     install_requires=[
-        'github3.py'
+        'github3.py',
+        'PyYAML >= 3.11'
     ],
 
     classifiers=[

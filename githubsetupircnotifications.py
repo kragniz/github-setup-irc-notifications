@@ -8,11 +8,18 @@ import getpass
 import sys
 
 import github3
+import yaml
 
 
 def error(message):
     print(message)
     sys.exit(1)
+
+def load_conf_file(filename):
+    with open(filename) as f:
+        conf = yaml.load(f)
+
+    return conf
 
 def main():
     parser = argparse.ArgumentParser()
