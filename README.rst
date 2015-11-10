@@ -6,6 +6,10 @@ Configure all repositories in an organization with irc notifications
 Usage
 -----
 
+.. code:: bash
+
+    $ github-setup-irc-notifications --username kragniz boatd '#abersailbot'
+
 Installation
 ------------
 
