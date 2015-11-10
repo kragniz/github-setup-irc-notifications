@@ -23,6 +23,8 @@ github-setup-irc-notifications depends on the great github3.py library by
 Licence
 -------
 
+MIT - see COPYING for full licence.
+
 Authors
 -------
 
