@@ -34,9 +34,17 @@ Installation
 Requirements
 ------------
 
-github-setup-irc-notifications depends on the great github3.py library by
-@sigmavirus24. You can install it and any other dependencies with ``pip install
--r requirements.txt``.
+This tool is written with compatibility for python3 only. To develop locally,
+create a virtualenv::
+
+    $ virtualenv -p /usr/bin/python3 env
+    $ . env/bin/activate
+
+github-setup-irc-notifications depends on the excellent github3.py library by
+@sigmavirus24. You can install it and other dependencies with ``pip install -r
+requirements.txt``, or just install the package in your venv::
+
+    $ pip install -e .
 
 Licence
 -------
