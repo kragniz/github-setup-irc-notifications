@@ -16,6 +16,10 @@ Installation
 Requirements
 ------------
 
+github-setup-irc-notifications depends on the great github3.py library by
+@sigmavirus24. You can install it and any other dependencies with ``pip install
+-r requirements.txt``.
+
 Licence
 -------
 
