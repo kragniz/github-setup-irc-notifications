@@ -16,4 +16,4 @@ channel-conf:
     long_url: '0'
     notice: '0'
     message_without_join: '1'
-    nick: github
+    nick: 'github'
