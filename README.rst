@@ -31,6 +31,10 @@ Usage
 Installation
 ------------
 
+::
+
+    $ pip install github-setup-irc-notifications
+
 Requirements
 ------------
 
