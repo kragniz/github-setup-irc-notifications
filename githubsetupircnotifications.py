@@ -10,6 +10,8 @@ import sys
 import github3
 import yaml
 
+__version__ = '0.1.0'
+
 
 def error(message):
     print(message)
@@ -29,6 +31,9 @@ def main():
                                              'repositories to add '
                                              'notifications to')
     parser.add_argument('channel', help='irc channel to send notifications to')
+    parser.add_argument('--version', action='version',
+                                     version='%(prog)s '
+                                     '{version}'.format(version=__version__))
     args = parser.parse_args()
 
     if args.username is None:
