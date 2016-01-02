@@ -2,4 +2,6 @@ sudo: false
 
 language: python
 
+install: pip install -e .
+
 script: github-setup-irc-notifications --version
